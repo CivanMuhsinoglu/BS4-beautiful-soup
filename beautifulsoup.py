@@ -1,12 +1,12 @@
 import requests
-import pandas as pd # we will analyz our data with pandas
+import pandas as pd # we will analyze our data with pandas
 from bs4 import BeautifulSoup
 page = requests.get('https://forecast.weather.gov/MapClick.php?textField1=28.54&textField2=-81.38')
 soup = BeautifulSoup(page.content, 'html.parser')
 week = soup.find(id = 'seven-day-forecast-body')
 
 items = (week.find_all(class_ ="tombstone-container"))# here the class is html class_  
-#Items are the forecast weather days as our variable
+#Items are the forecast weather days  
 """
 print(items[0])
 print('\n',items[1])
